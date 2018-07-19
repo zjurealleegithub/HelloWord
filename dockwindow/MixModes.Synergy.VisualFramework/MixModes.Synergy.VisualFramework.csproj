@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{91827FBF-B7E1-4A00-9F06-D6F170855AC6}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MixModes.Synergy.VisualFramework</RootNamespace>
+    <AssemblyName>MixModes.Synergy.VisualFramework</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <ExpressionBlendVersion>3.0.1927.0</ExpressionBlendVersion>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Interactivity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adorners\AdornerBase.cs" />
+    <Compile Include="Adorners\ResizingAdorner.cs" />
+    <Compile Include="Adorners\ContentAdornerBase.cs" />
+    <Compile Include="Behaviors\ContentDockBehavior.cs" />
+    <Compile Include="Behaviors\DockPointBehavior.cs" />
+    <Compile Include="Behaviors\LogicalParentBehavior.cs" />
+    <Compile Include="Commands\CommandBase.cs" />
+    <Compile Include="Controls\NotificationToolTipContent.xaml.cs">
+      <DependentUpon>NotificationToolTipContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\EmptyPanelToVisibilityConverter.cs" />
+    <Compile Include="Extensions\FrameworkElementExtensions.cs" />
+    <Compile Include="Framework\ObservableDependencyProperty.cs" />
+    <Compile Include="Framework\ObservableDependencyPropertyCollection.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="Views\DialogWindow.cs" />
+    <Compile Include="Windows\ContentDockPoint.cs" />
+    <Compile Include="Windows\CustomWindow.cs" />
+    <Compile Include="Windows\DockPane.cs" />
+    <Compile Include="Windows\DockPaneState.cs" />
+    <Compile Include="Windows\DocumentContainer.cs" />
+    <Compile Include="Windows\DocumentContainerState.cs" />
+    <Compile Include="Windows\DocumentContent.cs" />
+    <Compile Include="Windows\WindowsManagerSerializer.cs" />
+    <Compile Include="Windows\WindowsManager.xaml.cs">
+      <DependentUpon>WindowsManager.xaml</DependentUpon>
+    </Compile>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Windows\WindowsManagerDeserializer.cs" />
+    <Compile Include="Windows\XmlWindowsManagerDeserializer.cs" />
+    <Compile Include="Windows\XmlWindowsManagerSerializer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\NotificationToolTipContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\WindowsManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MixModes.Synergy.Resources\MixModes.Synergy.Resources.csproj">
+      <Project>{F81964C1-E1ED-4F85-BF5F-96A95B8541C7}</Project>
+      <Name>MixModes.Synergy.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MixModes.Synergy.Themes\MixModes.Synergy.Themes.csproj">
+      <Project>{BF2604F3-AA31-4075-B153-BDA51B9DA85C}</Project>
+      <Name>MixModes.Synergy.Themes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MixModes.Synergy.Utilities\MixModes.Synergy.Utilities.csproj">
+      <Project>{DA4B2C0E-D106-49E8-B921-6891149388CB}</Project>
+      <Name>MixModes.Synergy.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

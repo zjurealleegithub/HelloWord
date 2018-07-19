@@ -1,0 +1,156 @@
+﻿<UserControl x:Class="MixModes.Synergy.VisualFramework.Windows.WindowsManager"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:converters="clr-namespace:MixModes.Synergy.VisualFramework.Converters"
+             xmlns:local="clr-namespace:MixModes.Synergy.VisualFramework.Windows"
+             xmlns:behaviors="clr-namespace:MixModes.Synergy.VisualFramework.Behaviors"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             x:Name="UserControl"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="300"             
+             local:WindowsManager.DockPaneIllustrationStyle="{DynamicResource DockIllustrationGridStyle}"
+             local:WindowsManager.DockIllustrationContentStyle="{DynamicResource DockIllustrationContentStyle}">
+  <UserControl.Resources>
+
+    <Style x:Key="DockPointBorder"
+           TargetType="{x:Type Border}">
+      <Setter Property="BorderBrush"
+              Value="Transparent" />
+      <Setter Property="BorderThickness"
+              Value="2" />
+      <Setter Property="HorizontalAlignment"
+              Value="Center" />
+      <Setter Property="VerticalAlignment"
+              Value="Center" />
+      <Style.Triggers>
+        <Trigger Property="IsMouseOver"
+                 Value="True">
+          <Setter Property="BorderBrush"
+                  Value="Black" />
+        </Trigger>
+      </Style.Triggers>
+    </Style>
+
+    <!-- DockIllustrationGrid default style -->
+    <Style x:Key="DockIllustrationGridStyle"
+           TargetType="{x:Type Grid}">
+      <Setter Property="Background"
+              Value="{DynamicResource DockIllustrationBrush}"/>
+    </Style>
+    
+  </UserControl.Resources>
+
+  <Grid x:Name="LayoutRoot">
+
+    <!-- Overall dock panel -->
+    <DockPanel LastChildFill="True">
+
+      <!-- Top Window Headers -->
+      <StackPanel DockPanel.Dock="Top"
+                  x:Name="TopWindowHeaders"
+                  Orientation="Horizontal" />
+
+      <!-- Left Window Headers -->
+      <StackPanel Orientation="Vertical"
+                  DockPanel.Dock="Left"
+                  x:Name="LeftWindowHeaders" />
+
+      <!-- Right Window Headers -->
+      <StackPanel Orientation="Vertical"
+                  DockPanel.Dock="Right"
+                  x:Name="RightWindowHeaders" />
+
+      <!-- Bottom Window Headers -->
+      <StackPanel Orientation="Horizontal"
+                  DockPanel.Dock="Bottom"
+                  x:Name="BottomWindowHeaders" />
+
+      <!-- We need to group content and pinned windows in a single grid parent since
+                 we want floating windows to avoid overlapping with window headers -->
+      <Grid>
+        <DockPanel LastChildFill="True">
+
+          <!-- Left Pinned Windows -->
+          <DockPanel x:Name="LeftPinnedWindows"
+                     DockPanel.Dock="Left"
+                     LastChildFill="False" />
+
+          <!-- Right Pinned Windows -->
+          <DockPanel x:Name="RightPinnedWindows"
+                     DockPanel.Dock="Right"
+                     LastChildFill="False" />
+
+          <!-- Top Pinned Windows -->
+          <DockPanel x:Name="TopPinnedWindows"
+                     DockPanel.Dock="Top"
+                     LastChildFill="False" />
+
+          <!-- Bottom Pinned Windows -->
+          <DockPanel x:Name="BottomPinnedWindows"
+                     DockPanel.Dock="Bottom"
+                     LastChildFill="False" />
+
+          <!-- Document and Docking illustration panels -->
+          <Grid>
+
+            <local:DocumentContainer x:Name="DocumentContainer"/>
+            
+            <!-- Illustrates future window docked position -->
+            <DockPanel x:Name="DockingIllustrationPanel"
+                       LastChildFill="False"/>
+
+          </Grid>
+        </DockPanel>
+
+        <!-- Area for non-pinned windows to show up -->
+        <DockPanel x:Name="PopupArea"
+                   LastChildFill="False"/>
+      </Grid>
+
+    </DockPanel>
+
+    <Canvas x:Name="FloatingPanel"
+            ScrollViewer.CanContentScroll="False" />
+
+    <DockPanel x:Name="DockingPanel"
+               Visibility="Collapsed"
+               LastChildFill="false">
+
+      <Border DockPanel.Dock="Top"
+              Style="{StaticResource DockPointBorder}">
+        <i:Interaction.Behaviors>
+          <behaviors:DockPointBehavior/>
+        </i:Interaction.Behaviors>
+        <Image Source="/MixModes.Synergy.Resources;component/Resources/DockTop.png" />
+      </Border>
+
+      <Border DockPanel.Dock="Left"
+              Style="{StaticResource DockPointBorder}">
+        <i:Interaction.Behaviors>
+          <behaviors:DockPointBehavior/>
+        </i:Interaction.Behaviors>
+        <Image Source="/MixModes.Synergy.Resources;component/Resources/DockLeft.png" />
+      </Border>
+
+      <Border DockPanel.Dock="Right"
+              Style="{StaticResource DockPointBorder}">
+        <i:Interaction.Behaviors>
+          <behaviors:DockPointBehavior/>
+        </i:Interaction.Behaviors>
+        <Image Source="/MixModes.Synergy.Resources;component/Resources/DockRight.png" />
+      </Border>
+
+      <Border DockPanel.Dock="Bottom"
+              Style="{StaticResource DockPointBorder}">
+        <i:Interaction.Behaviors>
+          <behaviors:DockPointBehavior/>
+        </i:Interaction.Behaviors>
+        <Image Source="/MixModes.Synergy.Resources;component/Resources/DockBottom.png" />
+      </Border>      
+    </DockPanel>
+
+  </Grid>
+</UserControl>

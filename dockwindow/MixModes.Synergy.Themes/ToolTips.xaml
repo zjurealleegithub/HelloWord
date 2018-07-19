@@ -1,0 +1,25 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="NotificationToolTipBorder" TargetType="{x:Type Border}">
+        <Setter Property="BorderBrush"
+                Value="{x:Null}" />
+        <Setter Property="Background"
+                Value="{DynamicResource ToolTipBalloonBrush}" />
+        <Setter Property="MinHeight"
+                Value="100" />
+        <Setter Property="MinWidth"
+                Value="400" />
+        <Setter Property="Padding"
+                Value="8,32,8,8" />
+    </Style>
+
+    <ToolTip x:Key="NotificationToolTip"
+             Background="{x:Null}"
+             BorderBrush="{x:Null}"
+             HasDropShadow="False"
+             ToolTipService.InitialShowDelay="0">
+        <Border Style="{DynamicResource NotificationToolTipBorder}">
+            <ContentControl Content="{Binding Path=ToolTipContent}" />
+        </Border>
+    </ToolTip>
+</ResourceDictionary>

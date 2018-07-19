@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Resources="http://synergy.mixmodes.com/resources">
+    <Menu x:Key="MainWindowMenus"
+          Background="Transparent"
+          VerticalAlignment="Center"
+          DockPanel.Dock="Left"
+          HorizontalAlignment="Left"
+          Margin="8,0,0,0">
+        <MenuItem Header="{x:Static Resources:Language.FileMenu}">
+            <MenuItem Header="{x:Static Resources:Language.FileNewMenu}">
+                <MenuItem Header="{x:Static Resources:Language.ProjectMenu}" Command="{Binding NewProject}"/>
+                <MenuItem Header="{x:Static Resources:Language.IterationMenu}" Command="{Binding Iteration}"/>
+            </MenuItem>
+            <Separator />
+            <MenuItem Header="{x:Static Resources:Language.ExitMenu}" Command="{Binding ExitCommand}"/>
+        </MenuItem>
+    </Menu>
+</ResourceDictionary>

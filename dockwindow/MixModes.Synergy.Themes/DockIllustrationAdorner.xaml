@@ -1,0 +1,20 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Grid x:Key="DockIllustrationAdorner"               
+          x:Shared="False"               
+          Background="Red"
+          HorizontalAlignment="Stretch"
+          VerticalAlignment="Stretch">
+
+        <DockPanel Tag="PART_DOCKPANEL"
+                   LastChildFill="False">
+            <DockPanel.Resources>
+                <Style TargetType="{x:Type Grid}">
+                    <Setter Property="Background" Value="Beige"/>
+                </Style>
+            </DockPanel.Resources>
+        </DockPanel>
+        
+    </Grid>
+</ResourceDictionary>

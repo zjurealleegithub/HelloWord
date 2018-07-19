@@ -1,0 +1,10 @@
+C:\MixModes\Nirvana\MixModes\Synergy\MixModes.Synergy.Utilities\bin\Debug\MixModes.Synergy.Utilities.dll
+C:\MixModes\Nirvana\MixModes\Synergy\MixModes.Synergy.Utilities\bin\Debug\MixModes.Synergy.Utilities.pdb
+C:\MixModes\Nirvana\MixModes\Synergy\MixModes.Synergy.Utilities\obj\Debug\ResolveAssemblyReference.cache
+C:\MixModes\Nirvana\MixModes\Synergy\MixModes.Synergy.Utilities\obj\Debug\MixModes.Synergy.Utilities.dll
+C:\MixModes\Nirvana\MixModes\Synergy\MixModes.Synergy.Utilities\obj\Debug\MixModes.Synergy.Utilities.pdb
+C:\Users\ZENG\Downloads\Synergy\MixModes.Synergy.Utilities\bin\Debug\MixModes.Synergy.Utilities.dll
+C:\Users\ZENG\Downloads\Synergy\MixModes.Synergy.Utilities\bin\Debug\MixModes.Synergy.Utilities.pdb
+C:\Users\ZENG\Downloads\Synergy\MixModes.Synergy.Utilities\obj\Debug\MixModes.Synergy.Utilities.csprojResolveAssemblyReference.cache
+C:\Users\ZENG\Downloads\Synergy\MixModes.Synergy.Utilities\obj\Debug\MixModes.Synergy.Utilities.dll
+C:\Users\ZENG\Downloads\Synergy\MixModes.Synergy.Utilities\obj\Debug\MixModes.Synergy.Utilities.pdb
